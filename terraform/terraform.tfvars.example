@@ -8,7 +8,6 @@
 #
 # Sensitive variables used by this project:
 #   sql1_administrator_password  (export TF_VAR_sql1_administrator_password=... )
-#   sql2_administrator_password  (export TF_VAR_sql2_administrator_password=... )
 
 afd1_cdn_profile_name = "REPLACE_ME"
 afd1_origin_host_name = "REPLACE_ME"
@@ -19,7 +18,6 @@ key_vault_id = "REPLACE_ME"
 resource_group_name = "REPLACE_ME"
 servicebus1_servicebus_namespace_id = "REPLACE_ME"
 sql1_administrator_login = "REPLACE_ME"
-sql2_administrator_login = "REPLACE_ME"
 subnet1_address_prefix = "REPLACE_ME"
 subnet2_address_prefix = "REPLACE_ME"
 tenant_id = "REPLACE_ME"
