@@ -62,8 +62,8 @@
     },
     {
       "id": "sql2",
-      "type": "database.relational",
-      "label": "Azure SQL Failover",
+      "type": "database.nosql",
+      "label": "Cosmos Db",
       "group": "subnet2",
       "suggested_type": null,
       "suggestion_reason": null
