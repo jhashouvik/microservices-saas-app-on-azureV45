@@ -116,16 +116,17 @@ resource "azurerm_postgresql_flexible_server" "sql1" {
 # <<< archly:node:sql1 <<<
 
 # >>> archly:node:sql2 >>>
-# Azure SQL Failover (database.relational) -- belongs to subnet 'Data Subnet' (see resource id 'subnet2' above; wire this resource's subnet/network args to it manually)
-resource "azurerm_postgresql_flexible_server" "sql2" {
-  name                   = "sql2"
-  resource_group_name    = var.resource_group_name
-  location               = var.location
-  administrator_login    = var.sql2_administrator_login
-  administrator_password = var.sql2_administrator_password
-  sku_name               = "B_Standard_B1ms"
-  storage_mb             = 32768
-  version                = "15"
+# Cosmos Db (database.nosql) -- belongs to subnet 'Data Subnet' (see resource id 'subnet2' above; wire this resource's subnet/network args to it manually)
+resource "azurerm_cosmosdb_account" "sql2" {
+  name                = "sql2"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  offer_type          = "Standard"
+  consistency_policy { consistency_level = "Session" }
+  geo_location {
+    location          = var.location
+    failover_priority = 0
+  }
 }
 # <<< archly:node:sql2 <<<
 
